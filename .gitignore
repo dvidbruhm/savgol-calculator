@@ -1,2 +1,5 @@
 __pycache__/
 .vim/
+build/
+dist/
+savgol_calculator.egg-info/
