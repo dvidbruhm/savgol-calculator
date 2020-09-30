@@ -35,6 +35,12 @@ As another example, to get the coefficients of the filter for a window size of 1
     python savgol_poly.py --window_size 101 --order 3 --smoothing 1 --offset -50
 ```
 
+There are no dependencies to use this calculator. To get the coefficients in your application :
+
+```
+from savgol_poly.py
+```
+
 # Configuration
 
 Here is the description of each parameter, taken from [here](http://www.users.waitrose.com/~robinjames/SG/parameters.html).
