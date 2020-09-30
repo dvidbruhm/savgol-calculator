@@ -1,6 +1,6 @@
 # Savitsky-Golay filter coefficients calculator
 
-This repository contains a python implementation of the Savitsky-Golay filter coefficients calculation. This implementation is based on the Pascal implementation in the paper [General Least Squares Smoothing And Differentiation By The Convolution Method]. I needed access to the coefficients of the filter in python, and I hope this repo can be useful to someone.
+This repository contains a python implementation of the Savitsky-Golay filter coefficients calculation. This implementation is based on the Pascal implementation in the paper [General Least Squares Smoothing And Differentiation By The Convolution Method](http://www.personal.psu.edu/users/m/r/mrh318/Gorry-AC-1990.pdf). I needed access to the coefficients of the filter in python, and I hope this repo can be useful to someone.
 
 # Usage
 
