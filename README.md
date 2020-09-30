@@ -43,7 +43,7 @@ Here is the description of each parameter, taken from [here](http://www.users.wa
 
 - window size, the number of points to be used for the estimate. Here, m is the number of points used on each side of the point in question. So for example if m = 3, the point in question is used plus three points on either side, so a total of 7 points are used in calculating the estimate.
     
-- s, the parameter to be estimated, which takes the following values:
+- smoothing, the parameter to be estimated, which takes the following values:
         0 for smoothing
         1 for the first derivative (gradient)
         2 for the second derivative
@@ -55,7 +55,7 @@ Here is the description of each parameter, taken from [here](http://www.users.wa
         3 for a cubic fit
         etc
     
-- offset, the offset from the centre point. Normally an equal number of points on either side of the point in question is used. However, this is not possible at the beginning and end of a series of readings. For these cases, coefficients for offsets from the centre point are given. The offset t is 0 for an estimate at the point in question, -1 for the previous point, -m for the first point, etc.
+- offset, the offset from the centre point. Normally an equal number of points on either side of the point in question is used. However, this is not possible at the beginning and end of a series of readings. For these cases, coefficients for offsets from the centre point are given. The offset t is 0 for an estimate at the point in question, -1 for the previous point, -(half_window_size) for the first point, etc.
 
 
 # Testing
