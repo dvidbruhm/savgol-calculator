@@ -2,12 +2,20 @@
 
 This repository contains a python implementation of the Savitsky-Golay filter coefficients calculation. This implementation is based on the Pascal implementation in the paper [General Least Squares Smoothing And Differentiation By The Convolution Method](http://www.personal.psu.edu/users/m/r/mrh318/Gorry-AC-1990.pdf). I needed access to the coefficients of the filter in python, and I hope this repo can be useful to someone.
 
+# Installation
+
+There are no dependencies to use this calculator. To install simply run:
+
+```
+    pip install savgol-calculator
+```
+
 # Usage
 
 The script is very simple to use. Here is the help message:
 
 ```
-    usage: savgol_poly.py [-h] -ws WINDOW_SIZE [-o ORDER] [-s SMOOTHING] [-t OFFSET]
+    usage: savgol.py [-h] -ws WINDOW_SIZE [-o ORDER] [-s SMOOTHING] [-t OFFSET]
 
     Generate Savitsky-Golay filter coefficients for different parameters.
 
@@ -26,26 +34,30 @@ The script is very simple to use. Here is the help message:
 For example, to get the coefficients of the filter for a window size of 5, a linear polynomial fit and with no offset (use the center point):
 
 ```
-    python savgol_poly.py --window_size 5 --order 1 --smoothing 0 --offset 0
+    python -m SGCC --window_size 5 --order 1 --smoothing 0 --offset 0
 ```
 
 As another example, to get the coefficients of the filter for a window size of 101, a cubic polynomial fit, using the last point and computing the first derivative:
 
 ```
-    python savgol_poly.py --window_size 101 --order 3 --smoothing 1 --offset -50
+    python -m SGCC --window_size 101 --order 3 --smoothing 1 --offset -50
 ```
 
-There are no dependencies to use this calculator. To get the coefficients in your application :
+To get the coefficients in your application :
 
 ```
-from savgol_poly.py
+from SGCC.savgol import get_coefficients
+
+# Compute the same coefficients as the examples above
+coeffs = get_coefficients(smoothing=0,order=1,window_size=5,offset=0)
+coeffs = get_coefficients(smoothing=1,order=3,window_size=101,offset=-50)
 ```
+
+The function `get_coefficients` returns a list with the computed coefficients.
 
 # Configuration
 
 Here is the description of each parameter, taken from [here](http://www.users.waitrose.com/~robinjames/SG/parameters.html).
-
-
 
 - window size, the number of points to be used for the estimate. Here, m is the number of points used on each side of the point in question. So for example if m = 3, the point in question is used plus three points on either side, so a total of 7 points are used in calculating the estimate.
     
